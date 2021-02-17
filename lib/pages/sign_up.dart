@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodude/themes/app_colors.dart';
 import 'package:foodude/themes/styles_text.dart';
@@ -35,20 +36,23 @@ class _SignUpPageState extends State<SignUpPage> {
                         SizedBox(
                           height: 20,
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              "Enter your Email and new Password\nfor sign up, or",
-                            ),
-                          ],
-                        ),
-                        FlatButton(
-                          padding: const EdgeInsets.all(0),
-                          onPressed: goSignIn,
-                          child: Text(
-                            'Already have account?',
-                            style: TextStyle(color: AppColors.primary),
-                          ),
+                        RichText(
+                          text: TextSpan(
+                              text:
+                                  "Enter your Email and new Password\nfor sign up, or ",
+                              style: AppTextStyles.body,
+                              children: [
+                                TextSpan(
+                                  style: AppTextStyles.body.merge(
+                                    TextStyle(
+                                      color: AppColors.primary,
+                                    ),
+                                  ),
+                                  text: 'Already have account?',
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = goSignIn,
+                                )
+                              ]),
                         ),
                         SizedBox(
                           height: 20,
@@ -78,12 +82,48 @@ class _SignUpPageState extends State<SignUpPage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('OR'),
+                            RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                  text: "By signing up you agree to our ",
+                                  style: AppTextStyles.body,
+                                  children: [
+                                    TextSpan(
+                                      style: AppTextStyles.body.merge(
+                                        TextStyle(
+                                          color: AppColors.primary,
+                                        ),
+                                      ),
+                                      text: 'Terms\nCondition',
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = onPressCondition,
+                                    ),
+                                    TextSpan(
+                                      style: AppTextStyles.body,
+                                      text: ' & ',
+                                    ),
+                                    TextSpan(
+                                      style: AppTextStyles.body.merge(
+                                        TextStyle(
+                                          color: AppColors.primary,
+                                        ),
+                                      ),
+                                      text: 'Privacy Policy',
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = onPressPolicy,
+                                    )
+                                  ]),
+                            ),
                           ],
-                          crossAxisAlignment: CrossAxisAlignment.center,
                         ),
-                        SizedBox(
-                          height: 20,
+                        Row(
+                          children: [
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              child: Text('OR'),
+                            ),
+                          ],
+                          mainAxisAlignment: MainAxisAlignment.center,
                         ),
                         ButtonSubmit(
                           title: 'CONTINUE WITH FACEBOOK',
@@ -116,6 +156,14 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 
   void goSignIn() => Navigator.pop(context);
+
+  void onPressCondition() {
+    print('onPressCondition');
+  }
+
+  void onPressPolicy() {
+    print('onPressPolicy');
+  }
 
   void signUp() {}
 

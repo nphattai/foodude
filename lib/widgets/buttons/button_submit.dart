@@ -23,7 +23,7 @@ class ButtonSubmit extends StatelessWidget {
       child: Container(
         height: 50,
         padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.only(bottom: 20),
+        margin: const EdgeInsets.only(bottom: 10, top: 10),
         decoration: BoxDecoration(
             color: background != null ? background : AppColors.primary,
             borderRadius: BorderRadius.all(Radius.circular(10))),

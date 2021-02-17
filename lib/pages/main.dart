@@ -32,6 +32,7 @@ class _MainPageState extends State<MainPage> {
 
   Widget getBottomNavigationBar() {
     return Container(
+      margin: const EdgeInsets.only(bottom: 15),
       height: 70,
       decoration: BoxDecoration(
         border: Border(

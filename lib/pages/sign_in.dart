@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodude/routes/route_name.dart';
 import 'package:foodude/themes/app_colors.dart';
@@ -33,20 +34,22 @@ class _SignInPageState extends State<SignInPage> {
                           'Sign In',
                           style: AppTextStyles.largeTitle,
                         ),
-                        Row(
-                          children: [
-                            Text(
-                              "Don't have an account?",
-                            ),
-                            FlatButton(
-                              onPressed: () => Navigator.pushNamed(
-                                  context, RouteName.signUpPage),
-                              child: Text(
-                                'Sign up now!',
-                                style: TextStyle(color: AppColors.primary),
-                              ),
-                            )
-                          ],
+                        Padding(padding: const EdgeInsets.only(bottom: 10)),
+                        RichText(
+                          text: TextSpan(
+                              text: "Don't have an account? ",
+                              style: AppTextStyles.body,
+                              children: [
+                                TextSpan(
+                                    style: AppTextStyles.body.merge(
+                                      TextStyle(
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                    text: 'Sign up now!',
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = goSignUp)
+                              ]),
                         ),
                         SizedBox(
                           height: 20,
@@ -68,8 +71,7 @@ class _SignInPageState extends State<SignInPage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             FlatButton(
-                              onPressed: () => Navigator.pushNamed(
-                                  context, RouteName.signUpPage),
+                              onPressed: onForgotPassword,
                               child: Text(
                                 'Forgot Password?',
                               ),
@@ -79,12 +81,12 @@ class _SignInPageState extends State<SignInPage> {
                         ButtonSubmit(title: 'SIGN IN', onPress: login),
                         Row(
                           children: [
-                            Text('OR'),
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              child: Text('OR'),
+                            ),
                           ],
                           mainAxisAlignment: MainAxisAlignment.center,
-                        ),
-                        SizedBox(
-                          height: 20,
                         ),
                         ButtonSubmit(
                           title: 'CONTINUE WITH FACEBOOK',
@@ -108,6 +110,8 @@ class _SignInPageState extends State<SignInPage> {
     );
   }
 
+  void goSignUp() => Navigator.pushNamed(context, RouteName.signUpPage);
+
   void dismissKeyboard() {
     FocusScopeNode currentFocus = FocusScope.of(context);
 
@@ -115,6 +119,8 @@ class _SignInPageState extends State<SignInPage> {
       currentFocus.unfocus();
     }
   }
+
+  void onForgotPassword() {}
 
   void login() {}
 
