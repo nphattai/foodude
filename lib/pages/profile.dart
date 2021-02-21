@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:foodude/themes/app_colors.dart';
 import 'package:foodude/themes/styles_text.dart';
+import 'package:foodude/widgets/buttons/button_card.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -60,9 +62,50 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Flexible(
             child: Container(
-              decoration: BoxDecoration(color: Colors.red),
+              padding: const EdgeInsets.only(top: 20),
+              decoration: BoxDecoration(color: Colors.grey[200]),
               child: Column(
-                children: [],
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  ButtonCard(
+                    onPress: goMyVoucher,
+                    title: 'My Voucher',
+                    icon: Image.asset('assets/images/voucher.png'),
+                  ),
+                  ButtonCard(
+                    onPress: goPaymentMethod,
+                    title: 'Payment methods',
+                    icon: Image.asset('assets/images/payment.png'),
+                  ),
+                  ButtonCard(
+                    onPress: goProfileAndAddress,
+                    title: 'Profile & Address',
+                    icon: Image.asset('assets/images/profile.png'),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ButtonCard(
+                    onPress: goHelpCnter,
+                    title: 'Help center',
+                    icon: Image.asset('assets/images/support.png'),
+                  ),
+                  ButtonCard(
+                    onPress: goAbout,
+                    title: 'About us',
+                    icon: Image.asset('assets/images/info.png'),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  ButtonCard(
+                    onPress: onLogout,
+                    title: 'Log Out',
+                    titleStyle: TextStyle(color: AppColors.primary),
+                    icon: Image.asset('assets/images/log-out.png'),
+                    isVisibleFooter: false,
+                  ),
+                ],
               ),
             ),
             flex: 7,
@@ -73,4 +116,16 @@ class _ProfilePageState extends State<ProfilePage> {
   }
 
   void openNoti() {}
+
+  void goMyVoucher() {}
+
+  void goPaymentMethod() {}
+
+  void goProfileAndAddress() {}
+
+  void goHelpCnter() {}
+
+  void goAbout() {}
+
+  void onLogout() {}
 }
