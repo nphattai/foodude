@@ -49,11 +49,20 @@ flutter:
     - assets/fonts/
 
   fonts:
-    - family: AvenirNextPro
+    - family: AvenirNextLTProBold
       fonts:
         - asset: assets/fonts/AvenirNextLTPro-Bold.otf
+
+    - family: AvenirNextLTProDemi
+      fonts:
         - asset: assets/fonts/AvenirNextLTPro-Demi.otf
+
+    - family: AvenirNextLTProMedium
+      fonts:
         - asset: assets/fonts/AvenirNextLTPro-Medium.otf
+
+    - family: AvenirNextLTProRegular
+      fonts:
         - asset: assets/fonts/AvenirNextLTPro-Regular.otf
 
   # To add assets to your application, add an assets section, like this:

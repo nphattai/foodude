@@ -1,8 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodude/routes/route_name.dart';
-import 'package:foodude/themes/app_colors.dart';
-import 'package:foodude/themes/styles_text.dart';
 import 'package:foodude/widgets/buttons/button_submit.dart';
 import 'package:foodude/widgets/headers/header_back.dart';
 
@@ -32,38 +30,34 @@ class _SignInPageState extends State<SignInPage> {
                       children: [
                         Text(
                           'Sign In',
-                          style: AppTextStyles.largeTitle,
+                          style: Theme.of(context).accentTextTheme.headline2,
                         ),
-                        Padding(padding: const EdgeInsets.only(bottom: 10)),
-                        RichText(
-                          text: TextSpan(
-                              text: "Don't have an account? ",
-                              style: AppTextStyles.body,
-                              children: [
-                                TextSpan(
-                                    style: AppTextStyles.body.merge(
-                                      TextStyle(
-                                        color: AppColors.primary,
-                                      ),
-                                    ),
-                                    text: 'Sign up now!',
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = goSignUp)
-                              ]),
-                        ),
-                        SizedBox(
-                          height: 20,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 20, bottom: 20),
+                          child: RichText(
+                            text: TextSpan(
+                                text: "Don't have an account? ",
+                                style:
+                                    Theme.of(context).accentTextTheme.bodyText2,
+                                children: [
+                                  TextSpan(
+                                      text: 'Sign up now!',
+                                      style: Theme.of(context)
+                                          .primaryTextTheme
+                                          .bodyText2,
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = goSignUp)
+                                ]),
+                          ),
                         ),
                         TextFormField(
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
                             labelText: 'Email or Phone Number',
                           ),
                         ),
                         Padding(padding: const EdgeInsets.only(bottom: 20)),
                         TextFormField(
                           decoration: InputDecoration(
-                            border: OutlineInputBorder(),
                             labelText: 'Password',
                           ),
                         ),

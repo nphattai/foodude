@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:foodude/themes/app_colors.dart';
-import 'package:foodude/themes/styles_text.dart';
+import 'package:foodude/themes/app_text_styles.dart';
 import 'package:foodude/widgets/buttons/button_submit.dart';
 import 'package:foodude/widgets/headers/header_back.dart';
 
@@ -31,7 +31,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       children: [
                         Text(
                           'Sign Up',
-                          style: AppTextStyles.largeTitle,
+                          style: AppTextStyle.headline2,
                         ),
                         SizedBox(
                           height: 20,
@@ -40,10 +40,10 @@ class _SignUpPageState extends State<SignUpPage> {
                           text: TextSpan(
                               text:
                                   "Enter your Email and new Password\nfor sign up, or ",
-                              style: AppTextStyles.body,
+                              style: AppTextStyle.bodyText1,
                               children: [
                                 TextSpan(
-                                  style: AppTextStyles.body.merge(
+                                  style: AppTextStyle.bodyText1.merge(
                                     TextStyle(
                                       color: AppColors.primary,
                                     ),
@@ -86,10 +86,10 @@ class _SignUpPageState extends State<SignUpPage> {
                               textAlign: TextAlign.center,
                               text: TextSpan(
                                   text: "By signing up you agree to our ",
-                                  style: AppTextStyles.body,
+                                  style: AppTextStyle.bodyText1,
                                   children: [
                                     TextSpan(
-                                      style: AppTextStyles.body.merge(
+                                      style: AppTextStyle.bodyText1.merge(
                                         TextStyle(
                                           color: AppColors.primary,
                                         ),
@@ -99,11 +99,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                         ..onTap = onPressCondition,
                                     ),
                                     TextSpan(
-                                      style: AppTextStyles.body,
+                                      style: AppTextStyle.bodyText1,
                                       text: ' & ',
                                     ),
                                     TextSpan(
-                                      style: AppTextStyles.body.merge(
+                                      style: AppTextStyle.bodyText1.merge(
                                         TextStyle(
                                           color: AppColors.primary,
                                         ),

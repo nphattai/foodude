@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodude/themes/styles_text.dart';
+import 'package:foodude/themes/app_text_styles.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
       body: Center(
         child: Text(
           "Home Page",
-          style: AppTextStyles.largeTitle,
+          style: AppTextStyle.headline2,
         ),
       ),
     );

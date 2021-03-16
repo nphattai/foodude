@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodude/themes/app_colors.dart';
-import 'package:foodude/themes/styles_text.dart';
+import 'package:foodude/themes/app_text_styles.dart';
 import 'package:foodude/widgets/buttons/button_card.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -35,14 +35,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         padding: const EdgeInsets.only(top: 10),
                         child: Text(
                           'Nguyen Phat Tai',
-                          style: AppTextStyles.body,
+                          style: AppTextStyle.bodyText1,
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 10),
                         child: Text(
                           '(424) 545-1818',
-                          style: AppTextStyles.body,
+                          style: AppTextStyle.bodyText1,
                         ),
                       ),
                     ],

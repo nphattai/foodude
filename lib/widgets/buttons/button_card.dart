@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodude/themes/styles_text.dart';
+import 'package:foodude/themes/app_text_styles.dart';
 
 class ButtonCard extends StatelessWidget {
   final Function onPress;
@@ -33,7 +33,7 @@ class ButtonCard extends StatelessWidget {
             Expanded(
               child: Text(
                 title,
-                style: AppTextStyles.body.merge(
+                style: AppTextStyle.bodyText1.merge(
                     TextStyle(color: Colors.black).merge(this.titleStyle)),
               ),
               flex: 1,
