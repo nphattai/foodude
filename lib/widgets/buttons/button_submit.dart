@@ -17,35 +17,40 @@ class ButtonSubmit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      padding: const EdgeInsets.all(0),
+    final Widget header = icon != null
+        ? Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(5)),
+            ),
+            child: icon)
+        : SizedBox(
+            width: 30,
+            height: 30,
+          );
+
+    return ElevatedButton(
       onPressed: onPress,
-      child: Container(
-        height: 50,
-        padding: const EdgeInsets.all(10),
-        margin: const EdgeInsets.only(bottom: 10, top: 10),
-        decoration: BoxDecoration(
-            color: background != null ? background : AppColors.primary,
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(
+            background != null ? background : AppColors.primary),
+        padding: MaterialStateProperty.all(
+          EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              width: 30,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(5)),
-              ),
-              child: icon != null
-                  ? icon
-                  : SizedBox(
-                      width: 30,
-                    ),
-            ),
-            Text(
-              title,
-              style: TextStyle(color: Colors.white),
-            ),
+            header,
+            Text(title,
+                style: Theme.of(context)
+                    .accentTextTheme
+                    .bodyText2
+                    .apply(color: AppColors.neutral_5)),
             SizedBox(
               width: 30,
             )

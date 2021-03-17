@@ -9,8 +9,9 @@ ThemeData _buildLightTheme() {
   const primaryColor = AppColors.primary;
   const accentColor = AppColors.neutral;
   const borderRadius = BorderRadius.all(Radius.circular(10));
-  const borderSide = BorderSide(width: 1, color: AppColors.neutral_3);
-  var borderSideError = borderSide.copyWith(color: AppColors.semantic_1);
+  const focusBorderSide = BorderSide(width: 1, color: AppColors.neutral_3);
+  const enableBorderSide = BorderSide(width: 0.5, color: AppColors.neutral_3);
+  var borderSideError = focusBorderSide.copyWith(color: AppColors.semantic_1);
 
   return ThemeData(
     brightness: Brightness.light,
@@ -24,15 +25,21 @@ ThemeData _buildLightTheme() {
       buttonColor: AppColors.primary,
       colorScheme: ColorScheme.light(primary: AppColors.primary),
     ),
+    iconTheme: IconThemeData(color: accentColor),
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.white,
+      iconTheme: IconThemeData(color: AppColors.neutral),
+      elevation: 0,
+    ),
     inputDecorationTheme: InputDecorationTheme(
       labelStyle: AppTextStyle.bodyText1.apply(color: AppColors.neutral_2),
       enabledBorder: OutlineInputBorder(
-          borderSide: borderSide, borderRadius: borderRadius),
+          borderSide: enableBorderSide, borderRadius: borderRadius),
       focusedBorder: OutlineInputBorder(
-          borderSide: borderSide, borderRadius: borderRadius),
+          borderSide: focusBorderSide, borderRadius: borderRadius),
       errorBorder: OutlineInputBorder(
-        borderSide: borderSideError,
-      ),
+          borderSide: borderSideError, borderRadius: borderRadius),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
     ),
   );
 }

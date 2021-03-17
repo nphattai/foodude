@@ -8,7 +8,7 @@ class HeaderBack extends StatelessWidget {
 
   @override
   build(BuildContext context) {
-    return Container(
+    return Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

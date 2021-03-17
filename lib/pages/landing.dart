@@ -11,17 +11,19 @@ class _LandingPageState extends State<LandingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(padding: const EdgeInsets.only(top: 100)),
-          RaisedButton(
+          Row(),
+          ElevatedButton(
             child: Text('Sign in'),
             onPressed: () => Navigator.pushNamed(context, RouteName.signInPage),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Sign Up'),
             onPressed: () => Navigator.pushNamed(context, RouteName.signUpPage),
           ),
-          RaisedButton(
+          ElevatedButton(
             child: Text('Main page'),
             onPressed: () => Navigator.pushNamed(context, RouteName.mainPage),
           )
