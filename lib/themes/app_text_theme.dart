@@ -3,6 +3,9 @@ import 'package:foodude/themes/app_colors.dart';
 import 'package:foodude/themes/app_text_styles.dart';
 
 class AppTextTheme {
+  static final primaryColor = AppColors.burntOrange;
+  static final accentColor = AppColors.fiord;
+
   static TextTheme primaryTextTheme = TextTheme(
           headline2: AppTextStyle.headline2,
           headline3: AppTextStyle.headline3,
@@ -12,10 +15,10 @@ class AppTextTheme {
           bodyText1: AppTextStyle.bodyText1,
           bodyText2: AppTextStyle.bodyText2,
           caption: AppTextStyle.caption)
-      .apply(displayColor: AppColors.primary, bodyColor: AppColors.primary);
+      .apply(displayColor: primaryColor, bodyColor: primaryColor);
 
   static TextTheme accentTextTheme = primaryTextTheme.copyWith().apply(
-        displayColor: AppColors.neutral,
-        bodyColor: AppColors.neutral,
+        displayColor: accentColor,
+        bodyColor: accentColor,
       );
 }

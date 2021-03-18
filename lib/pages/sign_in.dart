@@ -10,6 +10,8 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  final cursorColor = AppColors.fiord;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -52,7 +54,7 @@ class _SignInPageState extends State<SignInPage> {
             ),
           ),
           TextFormField(
-            cursorColor: AppColors.neutral,
+            cursorColor: cursorColor,
             style: accentTextTheme.bodyText1,
             decoration: InputDecoration(
               labelText: 'Email or Phone Number',
@@ -60,7 +62,7 @@ class _SignInPageState extends State<SignInPage> {
           ),
           Padding(padding: const EdgeInsets.only(bottom: 20)),
           TextFormField(
-            cursorColor: AppColors.neutral,
+            cursorColor: cursorColor,
             style: accentTextTheme.bodyText1,
             decoration: InputDecoration(
               labelText: 'Password',
@@ -77,7 +79,7 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                 style: ButtonStyle(
                     overlayColor:
-                        MaterialStateProperty.all(AppColors.neutral_4)),
+                        MaterialStateProperty.all(AppColors.whiteSmoke)),
               ),
             ],
           ),

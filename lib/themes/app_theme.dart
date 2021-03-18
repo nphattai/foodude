@@ -6,33 +6,34 @@ import 'package:foodude/themes/app_text_theme.dart';
 final ThemeData kLightTheme = _buildLightTheme();
 
 ThemeData _buildLightTheme() {
-  const primaryColor = AppColors.primary;
-  const accentColor = AppColors.neutral;
+  const primaryColor = AppColors.burntOrange;
+  const accentColor = AppColors.fiord;
+  const errorColor = AppColors.coralRed;
   const borderRadius = BorderRadius.all(Radius.circular(10));
-  const focusBorderSide = BorderSide(width: 1, color: AppColors.neutral_3);
-  const enableBorderSide = BorderSide(width: 0.5, color: AppColors.neutral_3);
-  var borderSideError = focusBorderSide.copyWith(color: AppColors.semantic_1);
+  const focusBorderSide = BorderSide(width: 1, color: AppColors.silver);
+  const enableBorderSide = BorderSide(width: 0.5, color: AppColors.silver);
+  final borderSideError = focusBorderSide.copyWith(color: errorColor);
 
   return ThemeData(
     brightness: Brightness.light,
     primaryColor: primaryColor,
     accentColor: accentColor,
-    scaffoldBackgroundColor: AppColors.neutral_5,
-    errorColor: AppColors.semantic_1,
+    scaffoldBackgroundColor: AppColors.white,
+    errorColor: errorColor,
     accentTextTheme: AppTextTheme.accentTextTheme,
     primaryTextTheme: AppTextTheme.primaryTextTheme,
     buttonTheme: ButtonThemeData(
-      buttonColor: AppColors.primary,
-      colorScheme: ColorScheme.light(primary: AppColors.primary),
+      buttonColor: primaryColor,
+      colorScheme: ColorScheme.light(primary: primaryColor),
     ),
     iconTheme: IconThemeData(color: accentColor),
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.white,
-      iconTheme: IconThemeData(color: AppColors.neutral),
+      iconTheme: IconThemeData(color: accentColor),
       elevation: 0,
     ),
     inputDecorationTheme: InputDecorationTheme(
-      labelStyle: AppTextStyle.bodyText1.apply(color: AppColors.neutral_2),
+      labelStyle: AppTextStyle.bodyText1.apply(color: AppColors.nobel),
       enabledBorder: OutlineInputBorder(
           borderSide: enableBorderSide, borderRadius: borderRadius),
       focusedBorder: OutlineInputBorder(

@@ -17,6 +17,7 @@ class ButtonSubmit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final primaryColor = Theme.of(context).primaryColor;
     final Widget header = icon != null
         ? Container(
             width: 30,
@@ -35,7 +36,7 @@ class ButtonSubmit extends StatelessWidget {
       onPressed: onPress,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(
-            background != null ? background : AppColors.primary),
+            background != null ? background : primaryColor),
         padding: MaterialStateProperty.all(
           EdgeInsets.symmetric(vertical: 0, horizontal: 0),
         ),
@@ -50,7 +51,7 @@ class ButtonSubmit extends StatelessWidget {
                 style: Theme.of(context)
                     .accentTextTheme
                     .bodyText2
-                    .apply(color: AppColors.neutral_5)),
+                    .apply(color: AppColors.white)),
             SizedBox(
               width: 30,
             )

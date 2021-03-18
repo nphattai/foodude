@@ -26,7 +26,24 @@ class _LandingPageState extends State<LandingPage> {
           ElevatedButton(
             child: Text('Main page'),
             onPressed: () => Navigator.pushNamed(context, RouteName.mainPage),
-          )
+          ),
+          ElevatedButton(
+            child: Text('Home page'),
+            onPressed: () => Navigator.pushNamed(context, RouteName.homePage),
+          ),
+          ElevatedButton(
+            child: Text('Orders page'),
+            onPressed: () => Navigator.pushNamed(context, RouteName.ordersPage),
+          ),
+          ElevatedButton(
+            child: Text('Saved page'),
+            onPressed: () => Navigator.pushNamed(context, RouteName.savedPage),
+          ),
+          ElevatedButton(
+            child: Text('Profile page'),
+            onPressed: () =>
+                Navigator.pushNamed(context, RouteName.profilePage),
+          ),
         ],
       ),
     );

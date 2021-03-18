@@ -4,6 +4,8 @@ import 'package:foodude/themes/app_text_styles.dart';
 import 'package:foodude/widgets/buttons/button_card.dart';
 
 class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key key}) : super(key: key);
+
   @override
   _ProfilePageState createState() => _ProfilePageState();
 }
@@ -101,7 +103,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   ButtonCard(
                     onPress: onLogout,
                     title: 'Log Out',
-                    titleStyle: TextStyle(color: AppColors.primary),
+                    titleStyle: TextStyle(color: AppColors.burntOrange),
                     icon: Image.asset('assets/images/log-out.png'),
                     isVisibleFooter: false,
                   ),

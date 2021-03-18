@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SavedPage extends StatefulWidget {
+  const SavedPage({Key key}) : super(key: key);
+
   @override
   _SavedPageState createState() => _SavedPageState();
 }
